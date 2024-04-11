@@ -1,3 +1,4 @@
+#programa que adiciona valores a uma lista, sem repetir e pergunta usuario se deseja continuar
 valores = []
 r = 'S'
 while r == 'S':
