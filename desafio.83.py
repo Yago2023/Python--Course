@@ -1,3 +1,4 @@
+#Desafio de validar expressões matematicas
 expre = str(input('Digite a expressão: '))
 pilha = []
 for simb in expre:
