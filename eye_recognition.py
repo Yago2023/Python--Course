@@ -1,21 +1,18 @@
-#Importing OpenCV Library for basic image processing functions
-import cv2
-# Numpy for array related functions
-import numpy as np
-# Dlib for deep learning based Modules and face landmark detection
-import dlib # type: ignore
-#face_utils for basic operations of conversion
-from imutils import face_utils
+import cv2 #importando OpenCV para processmentos básicos de imagem
+import numpy as np #para funções 
+import dlib #usado para modulos de deep learning e detecção de marcas em rosto
+
+from imutils import face_utils #face_utils para operações basicas de converção
 
 
-#Initializing the camera and taking the instance
-cap = cv2.VideoCapture(0)
+#Iniciando a camera 
+cap = cv2.VideoCapture(1)
 
-#Initializing the face detector and landmark detector
+#iniciando detecção de rosto e marca em rosto
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor("C:/Users/Speedbird/Downloads/shape_predictor_68_face_landmarks.dat")
 
-#status marking for current state
+#status que serão reconhecidos
 sleep = 0
 drowsy = 0
 active = 0
@@ -31,7 +28,7 @@ def blinked(a,b,c,d,e,f):
 	down = compute(a,f)
 	ratio = up/(2.0*down)
 
-	#Checking if it is blinked
+	#verificando se está piscando 
 	if(ratio>0.25):
 		return 2
 	elif(ratio>0.21 and ratio<=0.25):
@@ -65,35 +62,34 @@ while True:
         	landmarks[44], landmarks[47], landmarks[46], landmarks[45])
         
         #Now judge what to do for the eye blinks
-        if(left_blink==0 or right_blink==0):
-        	sleep+=1
-        	drowsy=0
-        	active=0
-        	if(sleep>6):
-        		status="SLEEPING !!!"
-        		color = (255,0,0)
+    if(left_blink==0 or right_blink==0):
+        sleep+=1
+        drowsy=0
+        active=0
+    if(sleep>6):
+        status="SLEEPING !!!"
+        color = (255,0,0)
 
-        elif(left_blink==1 or right_blink==1):
-        	sleep=0
-        	active=0
-        	drowsy+=1
-        	if(drowsy>6):
-        		status="Drowsy !"
-        		color = (0,0,255)
-
-        else:
-        	drowsy=0
-        	sleep=0
-        	active+=1
-        	if(active>6):
-        		status="Active :)"
-        		color = (0,255,0)
+    elif(left_blink==1 or right_blink==1):
+        sleep=0
+        active=0
+        drowsy+=1
+    if(drowsy>6):
+        status="Drowsy !"
+        color = (0,0,255)
+    else:
+        drowsy=0
+        sleep=0
+        active+=1
+    if(active>6):
+        status="Active :)"
+        color = (0,255,0)
         	
-        cv2.putText(frame, status, (100,100), cv2.FONT_HERSHEY_SIMPLEX, 1.2, color,3)
+    cv2.putText(frame, status, (100,100), cv2.FONT_HERSHEY_SIMPLEX, 1.2, color,3)
 
-        for n in range(0, 68):
-        	(x,y) = landmarks[n]
-        	cv2.circle(face_frame, (x, y), 1, (255, 255, 255), -1)
+    for n in range(0, 68):
+        (x,y) = landmarks[n]
+        cv2.circle(face_frame, (x, y), 1, (255, 255, 255), -1)
 
     cv2.imshow("Frame", frame)
     cv2.imshow("Result of detector", face_frame)
