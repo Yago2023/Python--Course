@@ -6,11 +6,11 @@ from imutils import face_utils #face_utils para operações basicas de converç�
 
 
 #Iniciando a camera 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 #iniciando detecção de rosto e marca em rosto
-detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("C:/Users/Speedbird/Downloads/shape_predictor_68_face_landmarks.dat")
+detector = dlib.get_frontal_face_detector() #returns a face detector
+predictor = dlib.shape_predictor("C:/Users/Downloads/shape_predictor_68_face_landmarks.dat") #modelo de aprendizado de máquina baseado em conjunto de árvores de regressão
 
 #status que serão reconhecidos
 sleep = 0
@@ -19,7 +19,7 @@ active = 0
 status=""
 color=(0,0,0)
 
-def compute(ptA,ptB):
+def compute(ptA,ptB): #que calcula a distância entre dois pontos
 	dist = np.linalg.norm(ptA - ptB)
 	return dist
 
@@ -29,21 +29,21 @@ def blinked(a,b,c,d,e,f):
 	ratio = up/(2.0*down)
 
 	#verificando se está piscando 
-	if(ratio>0.25):
+	if(ratio>0.25): #considera que está piscando
 		return 2
 	elif(ratio>0.21 and ratio<=0.25):
-		return 1
+		return 1 #coonsidera que há um potencial de piscada
 	else:
-		return 0
+		return 0 #caso não estiver piscando
 
 
-while True:
+while True: #verifica em tempo real 
     _, frame = cap.read()
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) #converte para cinza
 
-    faces = detector(gray)
+    faces = detector(gray) #procura qualquer rosto em cinza
     #detected face in faces array
-    for face in faces:
+    for face in faces: #extrai informações do rosto que encontro
         x1 = face.left()
         y1 = face.top()
         x2 = face.right()
@@ -52,7 +52,7 @@ while True:
         face_frame = frame.copy()
         cv2.rectangle(face_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
-        landmarks = predictor(gray, face)
+        landmarks = predictor(gray, face) #procurar pontos específicos do rosto
         landmarks = face_utils.shape_to_np(landmarks)
 
         #The numbers are actually the landmarks which will show eye
@@ -67,7 +67,7 @@ while True:
         drowsy=0
         active=0
     if(sleep>6):
-        status="SLEEPING !!!"
+        status="DORMINDO !!!"
         color = (255,0,0)
 
     elif(left_blink==1 or right_blink==1):
@@ -75,14 +75,14 @@ while True:
         active=0
         drowsy+=1
     if(drowsy>6):
-        status="Drowsy !"
+        status="SONOLENTO !"
         color = (0,0,255)
     else:
         drowsy=0
         sleep=0
         active+=1
     if(active>6):
-        status="Active :)"
+        status="ACORDADO :)"
         color = (0,255,0)
         	
     cv2.putText(frame, status, (100,100), cv2.FONT_HERSHEY_SIMPLEX, 1.2, color,3)
