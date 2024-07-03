@@ -1,15 +1,18 @@
-lista = list()
-par = list ()
-impar = list()
+#Mostra uma mesma lista dividida em duas listas
+lista = [[], []]
+valor = 0
 cont = 0
 for c in range(0, 7):
     cont += 1  # Correção aqui
-    lista.append(int(input(f'Digite {cont}º valor: ')))
+    valor = int(input(f'Digite {cont}º valor: '))
+    if valor % 2 == 0:
+        lista[0].append(valor)
+    else:
+        lista[1].append(valor)
+print('-='*30)
 print(lista)
-for p in (lista): #check se é par
-    if p % 2 == 0:
-        par.append(lista[:])
-    else: # se não é par, por regra é impar 
-        impar.append(lista[:])
-    print(par)
-    print(impar)
+lista[0].sort() 
+lista[1].sort()
+print(f'Os pares listados são {lista[0]}')
+print(f'Os Impares listados são {lista[1]}')
+ 
