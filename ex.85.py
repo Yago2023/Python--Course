@@ -1,4 +1,4 @@
-#Mostra uma mesma lista dividida em duas listas
+#Mostra uma mesma lista dividida em duas listas internas de pares e impares
 lista = [[], []]
 valor = 0
 cont = 0

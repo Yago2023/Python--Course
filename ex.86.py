@@ -1,12 +1,12 @@
-lista = [[],
-         [],
-         []]
-cont = 0
-for c in range(0,9):
-    valor = int(input('Digite o valor:'))
-    cont += 1
-    if cont <= 3:
-        lista[0].append(valor)
-print(lista)
+matriz = [[0,0,0], [0,0,0], [0,0,0]]
+for l in range(0,3):
+    for c in range(0,3):
+        matriz [l][c] = int(input(f'Digite o valor para [{l}, {c}]: ' ))
+print('-='*30)
+print('MATRIZ')
+for l in range (0,3):#para mostar na tela
+    for c in range(0,3):
+        print(f'[{matriz[l][c]:^5}]', end='')
+    print()
     
     
