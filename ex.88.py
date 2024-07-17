@@ -18,7 +18,7 @@ while tot <= quant:
     jogos.append(lista[:])
     lista.clear ()
     tot +=1
-print(f'sorteando{quant} Jogos')
+print(f'Sorteando {quant} Jogos')
 for i,l in enumerate(jogos):
     print(f'Jogo:{i+1}: {l}')
     time.sleep(2)

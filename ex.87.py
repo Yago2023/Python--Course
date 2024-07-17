@@ -23,4 +23,4 @@ for c in range(0,3):
      elif matriz[1][c] > linh:
          linh = matriz[1][c]
          
-print(f'O maior número da segunda coluna é {linh}')
+print(f'O maior número da segunda linha é {linh}')
