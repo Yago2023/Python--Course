@@ -24,4 +24,35 @@ def contador():
     print('=-'*10)
 
 
-print(contador)
+def contador1(i,f,p):
+    print(f'O inicio da contagem {i} o final {f} com passe de {p}')
+    if p < 0:
+        p*=-1
+    if p ==0:
+        p=1
+    if i < f:
+        cont = i
+        while cont <= f:
+            print(f'{cont}',end=' ',flush=True)
+            sleep(0.5)
+            cont += p
+        print('FIM')
+    else:
+        cont = i
+        while cont >= f:
+            print(f'{cont}',end=' ',flush=True)
+            sleep(0.5)
+            cont -=p
+        print('FIM')
+
+
+
+#programa principal
+print(contador1(1,10,1))
+print(contador1(10,0,2))
+print('Agora é sua vez de personalizar sua contage: ')
+ini = int(input('Inicio: '))
+fim = int(input('Fim: '))
+pas = int(input('Passe: '))
+contador1(ini,fim,pas)
+
