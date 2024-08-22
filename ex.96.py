@@ -1,6 +1,6 @@
 def area(a,b):
     area = a * b
-    print(f'O terreno tem largura de {a} e comprimento de {b} o total é {area}')
+    print(f'O terreno tem largura de {a} e comprimento de {b} o total é {area}m2')
     
 
 print('Controle de terrenos')
