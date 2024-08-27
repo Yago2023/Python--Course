@@ -1,13 +1,13 @@
 def voto(v=0):
-    x = 2024 - v
+    from datetime import date #importar aqui economiza memoria
+    date = date.today().year
+    x = date - v
     if x < 16:
-        print('Voto negado')
-    elif 16 < x < 60:
-        print('Voto Obrigatorio')
-    elif x >= 60:
-        print('Voto opcional')
+        return f'Voto negado'
+    elif 16 <= x < 18 or x > 65:
+        return f'Voto Opcional'
     else:
-        print('Voto negado')
+        return f'Voto Obrigatorio'
 
 
 idade = int(input('Digite o ano que voce nasceu: '))
