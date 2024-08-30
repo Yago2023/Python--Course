@@ -30,7 +30,7 @@ print (valores)'''
 #docstrings colocar descrição abre 3 aspas e escreve um texto para que apareça no help 
 #Parametros opcionais - decidir e não usar todos os valores def somar (a=0,b=0,c=0):
 #escopo de variaveis - variavel local e variavel global 
-
+#se escrever global x - o local fica com valor local
 def teste(b):
     b+=4
     c = 2 
@@ -38,5 +38,4 @@ def teste(b):
     print(F'B dentro vale {b}')
     print(f'C dentro vale {c}')
 a = 5 
-
-print(teste(b))
+teste(a)

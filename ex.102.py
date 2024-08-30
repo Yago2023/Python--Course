@@ -1,6 +1,6 @@
 def fatorial (num=1,show=False):
-    ''''
-    -> Calcule o Fatorial de um número.
+    '''
+      -> Calcule o Fatorial de um número.
     :param n: O número a ser calculado.
     :param show: (opcional) Mostre ou não a conta
     :return: O valor do Fatorial de um pumero n.
