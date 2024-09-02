@@ -15,4 +15,3 @@ n = leiaInt('Digite um número: ')
 print(f'Voce acabou de digitar o número: {n}')
     
 
-    
