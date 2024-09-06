@@ -1,6 +1,6 @@
 import uteis
 
-num = int(input('Digite um valor: '))
-fat = uteis.fatorial(num)
-print(f'O fatorial de {num} é {fat}')
-print(f'O dobro de {num} é {uteis.dobro(num)}')
+
+n = float(input('Digite o numero:  '))
+print(f'O dobro de {n} é {uteis.dobro(n)}')
+print(f'A metade de {n} é {uteis.metade(n)}')
