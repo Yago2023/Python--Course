@@ -1,5 +1,4 @@
-# Hello, my name is Yago 
-Repository for Python exercises
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=016690&size=35&center=true&vCenter=true&width=1000&lines=HELLO,+MY+NAME+is+Yago+Roberto;I'm+24+years+old;I+from+Franca,+SP;I+study+electrical+engineering;Be+Welcome!+:%29)](https://git.io/typing-svg)
 
 <div align="center">
   <a href="https://github.com/Yago2023">
@@ -20,10 +19,16 @@ Repository for Python exercises
 ##
 
 <div> 
-  <a href="https://instagram.com/yago_roberto" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
-  <a href = "mailto:yagorobertodesouza@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-  <a href="https://www.linkedin.com/in/yago-roberto-520002237/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  <a href="https://instagram.com/yago_roberto" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-001f3f?style=for-the-badge&logo=instagram&logoColor=white" target="_blank">
+  </a>
+  <a href="mailto:yagorobertodesouza@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank">
+  </a>
+  <a href="https://www.linkedin.com/in/yago-roberto-520002237/" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-001f3f?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+  </a> 
 </div>
 
-![Snake animation](https://github.com/Yago2023/Yago2023/blob/output/snake.svg)
+
 
