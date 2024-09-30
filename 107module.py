@@ -11,4 +11,6 @@ def diminuir (n):
         return n - (n * 0.13) 
 
 
-print(diminuir(100))
+
+
+
